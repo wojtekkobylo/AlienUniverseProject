@@ -68,6 +68,10 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.3.4, )"
+            },
+            "ReactiveUI.Fody": {
+              "target": "Package",
+              "version": "[19.5.41, )"
             }
           },
           "imports": [
