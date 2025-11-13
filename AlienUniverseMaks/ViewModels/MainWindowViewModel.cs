@@ -112,4 +112,26 @@ public class MainWindowViewModel : ViewModelBase
         get => _selectedFilm;
         set => this.RaiseAndSetIfChanged( ref this._selectedFilm, value );
     }
+    private void ShowDetails()
+    {
+        if (this.SelectedFilm != null)
+        {
+            Console.WriteLine($"Nazwa filmu: {SelectedFilm.title}\n Polska nazwa filmu: {SelectedFilm.pltitle}\n Rok premiery: {SelectedFilm.releaseYear}\n" +
+                              $" Reżyseria: {SelectedFilm.director}\n Scenariusz: {SelectedFilm.scenario}\n Gatunek: {SelectedFilm.genre}," +
+                              $"Czas trwania: {SelectedFilm.movieTime}\n Ocena (IMDb): {SelectedFilm.rating}" +
+                              $"\n Główne postacie: {SelectedFilm.mainCharacters}\n Statek: {SelectedFilm.ship}\n Opis fabuły filmu: {SelectedFilm.description}\n " +
+                              $"Ciekawostka: {SelectedFilm.funFact}");
+        }
+        
+    }
+    public ReactiveCommand<Unit, Unit> ShowDetailsButton { get; }
+
+    public MainWindowViewModel()
+    {
+        var canShow = this
+            .WhenAnyValue(x => x.SelectedFilm)
+            .Select(film => film != null);
+        
+        ShowDetailsButton = ReactiveCommand.Create(ShowDetails,  canShow);
+    }
 }
