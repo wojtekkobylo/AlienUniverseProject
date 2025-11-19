@@ -22,9 +22,6 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
                 {
                     DataContext = new SummaryWindowViewModel(interaction.Input)
                 };
-                Console.WriteLine(interaction);
-                Console.WriteLine(interaction.Input);
-                Console.WriteLine(interaction.Input.Name);
                 
                 
                 await win.ShowDialog(this);

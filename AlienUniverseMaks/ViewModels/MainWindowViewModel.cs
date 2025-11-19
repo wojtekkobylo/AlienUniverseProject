@@ -127,7 +127,7 @@ public class MainWindowViewModel : ViewModelBase
     public Film SelectedFilm
     {
         get => _selectedFilm;
-        set => this.RaiseAndSetIfChanged( ref this._selectedFilm, value );
+        set => this.RaiseAndSetIfChanged(ref _selectedFilm, value);
     }
     private void ShowDetails()
     {
@@ -146,31 +146,17 @@ public class MainWindowViewModel : ViewModelBase
     public MainWindowViewModel()
     {
         ShowSummaryWindow = new Interaction<Film, Unit>();
-        
-        var canShow = this
-            .WhenAnyValue(x => x.SelectedFilm)
-            .Select(film => film != null);
-        
-        ShowDetailsButton = ReactiveCommand.CreateFromTask(async () =>
-            {   
-                var data = new Film()
-                {
-                    title = this.Title,
-                    pltitle= this.PlTitle,
-                    releaseYear = this.ReleaseYear,
-                    director = this.Director,
-                    scenario = this.Scenario,
-                    genre = this.Genre,
-                    movieTime = this.MovieTime,
-                    rating = this.Rating,
-                    mainCharacters = this.MainCharacters,
-                    ship = this.Ship,
-                    description = this.Description,
-                    funFact = this.FunFact,
-                };
-                await ShowSummaryWindow.Handle(data);
-            },
-            canShow);
 
+        ShowDetailsButton = ReactiveCommand.CreateFromTask(async () =>
+        {
+            await ShowSummaryWindow.Handle(SelectedFilm);
+        });
+        
+        this.WhenAnyValue(x => x.SelectedFilm)
+            .Where(film => film != null)
+            .Subscribe(async film =>
+            {
+                await ShowSummaryWindow.Handle(film);
+            });
     }
 }

@@ -1828,25 +1828,24 @@
     ]
   },
   "packageFolders": {
-    "/home/maks/.nuget/packages/": {}
+    "C:\\Users\\maksy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/maks/RiderProjects/AlienUniverseMaks/AlienUniverseMaks/AlienUniverseMaks.csproj",
+      "projectUniqueName": "C:\\Users\\maksy\\RiderProjects\\AlienUniverseProject\\AlienUniverseMaks\\AlienUniverseMaks.csproj",
       "projectName": "AlienUniverseMaks",
-      "projectPath": "/home/maks/RiderProjects/AlienUniverseMaks/AlienUniverseMaks/AlienUniverseMaks.csproj",
-      "packagesPath": "/home/maks/.nuget/packages/",
-      "outputPath": "/home/maks/RiderProjects/AlienUniverseMaks/AlienUniverseMaks/obj/",
+      "projectPath": "C:\\Users\\maksy\\RiderProjects\\AlienUniverseProject\\AlienUniverseMaks\\AlienUniverseMaks.csproj",
+      "packagesPath": "C:\\Users\\maksy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maksy\\RiderProjects\\AlienUniverseProject\\AlienUniverseMaks\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/maks/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\maksy\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1863,7 +1862,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -1916,7 +1915,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\maksy\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
