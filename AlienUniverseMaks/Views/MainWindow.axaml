@@ -8,15 +8,16 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="AlienUniverseMaks"
-        Height="1000"
-        Width="1000">
+        Height="600"
+        Width="600"
+        WindowStartupLocation="CenterScreen">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
+<ScrollViewer>
     <StackPanel Margin="20" Spacing="20" Orientation="Vertical">
         <TextBlock Text="Filmy" FontSize="20" Margin="0,0,0,20"/>
         <Grid ColumnDefinitions="*,*" RowDefinitions="Auto, Auto">
@@ -43,18 +44,22 @@
             <StackPanel IsVisible="{Binding IsAddingFilm}" Spacing="5">
                 <TextBox Watermark="Tytuł" Text="{Binding NewFilmTitle}"/>
                 <TextBox Watermark="Polska nazwa" Text="{Binding NewFilmPlTitle}"/>
-                <TextBox Watermark="Rok premiery" Text="{Binding NewFilmReleaseYear}"/>
+                <TextBlock Text="Rok wydania:"/>
+                <TextBox Text="{Binding NewFilmReleaseYear}"/>
                 <TextBox Watermark="Reżyser" Text="{Binding NewFilmDirector}"/>
                 <TextBox Watermark="Scenariusz" Text="{Binding NewFilmScenario}"/>
                 <TextBox Watermark="Gatunek" Text="{Binding NewFilmGenre}"/>
                 <TextBox Watermark="Czas trwania" Text="{Binding NewFilmMovieTime}"/>
-                <TextBox Watermark="Ocena IMDb" Text="{Binding NewFilmRating}"/>
+                <TextBlock Text="Ocena IMDb:"/>
+                <TextBox Watermark="Ocena IMDb" Text="{Binding NewFilmRating}" />
                 <TextBox Watermark="Statek" Text="{Binding NewFilmShip}"/>
                 <TextBox Watermark="Opis" Text="{Binding NewFilmDescription}" AcceptsReturn="True" Height="60"/>
+                <TextBox Watermark="Ciekawostka" Text="{Binding NewFilmFunFact}"/>
                 <Button Content="Dodaj film" Command="{Binding ConfirmAddFilmCommand}"/>
             </StackPanel>
             
             
     </StackPanel>
+</ScrollViewer>
 
 </Window>

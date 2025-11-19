@@ -19,7 +19,7 @@ public class MainWindowViewModel : ViewModelBase
     
     [Reactive] public string Title { get; set; } = "";
     [Reactive] public string PlTitle { get; set; } = "";
-    [Reactive] public int ReleaseYear { get; set; }
+    [Reactive] public int ReleaseYear { get; set; } = 0;
     [Reactive] public string Director { get; set; } = "";
     [Reactive] public string Scenario { get; set; } = "";
     [Reactive] public string Genre { get; set; } = "";
@@ -132,18 +132,19 @@ public class MainWindowViewModel : ViewModelBase
         get => _selectedFilm;
         set => this.RaiseAndSetIfChanged(ref _selectedFilm, value);
     }
-    private void ShowDetails()
-    {
-        if (this.SelectedFilm != null)
-        {
-            Console.WriteLine($"Nazwa filmu: {SelectedFilm.title}\n Polska nazwa filmu: {SelectedFilm.pltitle}\n Rok premiery: {SelectedFilm.releaseYear}\n" +
-                              $" Reżyseria: {SelectedFilm.director}\n Scenariusz: {SelectedFilm.scenario}\n Gatunek: {SelectedFilm.genre}," +
-                              $"Czas trwania: {SelectedFilm.movieTime}\n Ocena (IMDb): {SelectedFilm.rating}" +
-                              $"\n Główne postacie: {SelectedFilm.mainCharacters}\n Statek: {SelectedFilm.ship}\n Opis fabuły filmu: {SelectedFilm.description}\n " +
-                              $"Ciekawostka: {SelectedFilm.funFact}");
-        }
-        
-    }
+    // test wyswietlanie podsumowania
+    // private void ShowDetails()
+    // {
+    //     if (this.SelectedFilm != null)
+    //     {
+    //         Console.WriteLine($"Nazwa filmu: {SelectedFilm.title}\n Polska nazwa filmu: {SelectedFilm.pltitle}\n Rok premiery: {SelectedFilm.releaseYear}\n" +
+    //                           $" Reżyseria: {SelectedFilm.director}\n Scenariusz: {SelectedFilm.scenario}\n Gatunek: {SelectedFilm.genre}," +
+    //                           $"Czas trwania: {SelectedFilm.movieTime}\n Ocena (IMDb): {SelectedFilm.rating}" +
+    //                           $"\n Główne postacie: {SelectedFilm.mainCharacters}\n Statek: {SelectedFilm.ship}\n Opis fabuły filmu: {SelectedFilm.description}\n " +
+    //                           $"Ciekawostka: {SelectedFilm.funFact}");
+    //     }
+    //     
+    // }
     public ReactiveCommand<Unit, Unit> ShowDetailsButton { get; }
 
     public ReactiveCommand<Unit, Unit> StartAddFilmCommand { get; }
@@ -152,7 +153,7 @@ public class MainWindowViewModel : ViewModelBase
 
     [Reactive] public string NewFilmTitle { get; set; } = "";
     [Reactive] public string NewFilmPlTitle { get; set; } = "";
-    [Reactive] public int NewFilmReleaseYear { get; set; }
+    [Reactive] public int NewFilmReleaseYear { get; set; } = 0;
     [Reactive] public string NewFilmDirector { get; set; } = "";
     [Reactive] public string NewFilmScenario { get; set; } = "";
     [Reactive] public string NewFilmGenre { get; set; } = "";
@@ -160,6 +161,8 @@ public class MainWindowViewModel : ViewModelBase
     [Reactive] public double NewFilmRating { get; set; } = 0;
     [Reactive] public string NewFilmShip { get; set; } = "";
     [Reactive] public string NewFilmDescription { get; set; } = "";
+    
+    [Reactive] public string NewFilmFunFact { get; set; } = "";
     
     public MainWindowViewModel()
     {
@@ -178,6 +181,7 @@ public class MainWindowViewModel : ViewModelBase
             NewFilmRating = 0;
             NewFilmShip = "";
             NewFilmDescription = "";
+            NewFilmFunFact = "";
         });
 
         
@@ -196,7 +200,7 @@ public class MainWindowViewModel : ViewModelBase
                 mainCharacters = new List<string>(), 
                 ship = NewFilmShip,
                 description = NewFilmDescription,
-                funFact = ""
+                funFact = NewFilmFunFact,
             };
 
             Films.Add(film);

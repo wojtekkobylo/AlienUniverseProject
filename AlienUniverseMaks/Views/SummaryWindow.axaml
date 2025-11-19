@@ -9,16 +9,28 @@
         x:DataType="vm:SummaryWindowViewModel">
     <StackPanel>
 
-        <TextBlock Text="{Binding title}"/>
-        <TextBlock Text="{Binding pltitle}"/>
-        <TextBlock Text="{Binding releaseYear}"/>
-        <TextBlock Text="{Binding director}"/>
-        <TextBlock Text="{Binding scenario}"/>
-        <TextBlock Text="{Binding genre}"/>
-        <TextBlock Text="{Binding movieTime}"/>
-        <TextBlock Text="{Binding rating}"/>
-        
-        
+        <TextBlock><Run Text="Tytuł: "/><Run Text="{Binding title}"/></TextBlock>
+        <TextBlock Text=""/>
+        <TextBlock><Run Text="Spolszczony tytuł: "/><Run Text="{Binding pltitle}"/></TextBlock>
+        <TextBlock Text=""/>
+        <TextBlock><Run Text="Rok wydania: "/><Run Text="{Binding releaseYear}"/></TextBlock>
+        <TextBlock Text=""/>
+        <TextBlock><Run Text="Reżyseria: "/><Run Text="{Binding director}"/></TextBlock>
+        <TextBlock Text=""/>
+        <TextBlock><Run Text="Scenariusz: "/><Run Text="{Binding scenario}"/></TextBlock>
+        <TextBlock Text=""/>
+        <TextBlock><Run Text="Gatunek: "/><Run Text="{Binding genre}"/></TextBlock>
+        <TextBlock Text=""/>
+        <TextBlock><Run Text="Czas trwania: "/><Run Text="{Binding movieTime}"/></TextBlock>
+        <TextBlock Text=""/>
+
+        <StackPanel Orientation="Horizontal">
+            <ProgressBar Minimum="0" Maximum="10" Value="{Binding rating}" Height="20" Width="200"/>
+            <TextBlock><Run Text="Ocena IMDb: "/><Run Text="{Binding rating}"/></TextBlock>
+        </StackPanel>
+        <TextBlock Text=""/>
+
+        <TextBlock Text="Główni bohaterowie: "/>
         <ItemsControl ItemsSource="{Binding mainCharacters}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
@@ -26,12 +38,15 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <TextBlock Text=""/>
 
-        
-        
-        <TextBlock Text="{Binding ship}"/>
-        <TextBlock Text="{Binding description}" TextWrapping="Wrap"/>
-        <TextBlock Text="{Binding funFact}" TextWrapping="Wrap"/>
+        <TextBlock><Run Text="Statek: "/><Run Text="{Binding ship}"/></TextBlock>
+        <TextBlock Text=""/>
+        <TextBlock TextWrapping="Wrap"><Run Text="Opis: "/><Run Text="{Binding description}"/></TextBlock>
+        <TextBlock Text=""/>
+        <TextBlock TextWrapping="Wrap"><Run Text="Ciekawostka: "/><Run Text="{Binding funFact}"/></TextBlock>
+        <TextBlock Text=""/>
 
     </StackPanel>
 </Window>
+

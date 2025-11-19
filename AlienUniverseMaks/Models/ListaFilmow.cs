@@ -10,8 +10,8 @@ public class Film
     public string director { get; set; } = "";
     public string scenario  { get; set; } = "";
     public string genre { get; set; } = "";
-    public string movieTime {get; set;} = "x minut";
-    public double rating  { get; set; } = 0;
+    public string movieTime {get; set;} = "";
+    public double rating  { get; set; }
     public List<string> mainCharacters {get; set;}
     public string ship {get; set;} = "";
     public string description  {get; set;} = "";
