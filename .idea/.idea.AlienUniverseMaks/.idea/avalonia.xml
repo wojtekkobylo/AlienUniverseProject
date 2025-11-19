@@ -5,6 +5,7 @@
       <map>
         <entry key="AlienUniverseMaks/App.axaml" value="AlienUniverseMaks/AlienUniverseMaks.csproj" />
         <entry key="AlienUniverseMaks/Views/MainWindow.axaml" value="AlienUniverseMaks/AlienUniverseMaks.csproj" />
+        <entry key="AlienUniverseMaks/Views/SummaryWindow.axaml" value="AlienUniverseMaks/AlienUniverseMaks.csproj" />
       </map>
     </option>
   </component>

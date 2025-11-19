@@ -6,12 +6,29 @@ using System;
 using System.Collections.ObjectModel;
 using System.Reactive;
 using System.Reactive.Linq;
+using DynamicData.Diagnostics;
 using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 
 namespace AlienUniverseMaks.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
+    public ReactiveCommand<Unit, Unit> ShowSummaryCommand { get; }
+    public Interaction<Film, Unit> ShowSummaryWindow { get; }
+    
+    [Reactive] public string Title { get; set; } = "";
+    [Reactive] public string PlTitle { get; set; } = "";
+    [Reactive] public int ReleaseYear { get; set; }
+    [Reactive] public string Director { get; set; } = "";
+    [Reactive] public string Scenario { get; set; } = "";
+    [Reactive] public string Genre { get; set; } = "";
+    [Reactive] public string MovieTime { get; set; } = "";
+    [Reactive] public double Rating { get; set; } = 0;
+    [Reactive] public List<string> MainCharacters { get; set; }
+    [Reactive] public string Ship { get; set; } = "";
+    [Reactive] public string Description { get; set; } = "";
+    [Reactive] public string FunFact { get; set; } = "";
     public ObservableCollection<Film> Films { get; } = new()
     {
         new Film
@@ -128,10 +145,32 @@ public class MainWindowViewModel : ViewModelBase
 
     public MainWindowViewModel()
     {
+        ShowSummaryWindow = new Interaction<Film, Unit>();
+        
         var canShow = this
             .WhenAnyValue(x => x.SelectedFilm)
             .Select(film => film != null);
         
-        ShowDetailsButton = ReactiveCommand.Create(ShowDetails,  canShow);
+        ShowDetailsButton = ReactiveCommand.CreateFromTask(async () =>
+            {   
+                var data = new Film()
+                {
+                    title = this.Title,
+                    pltitle= this.PlTitle,
+                    releaseYear = this.ReleaseYear,
+                    director = this.Director,
+                    scenario = this.Scenario,
+                    genre = this.Genre,
+                    movieTime = this.MovieTime,
+                    rating = this.Rating,
+                    mainCharacters = this.MainCharacters,
+                    ship = this.Ship,
+                    description = this.Description,
+                    funFact = this.FunFact,
+                };
+                await ShowSummaryWindow.Handle(data);
+            },
+            canShow);
+
     }
 }

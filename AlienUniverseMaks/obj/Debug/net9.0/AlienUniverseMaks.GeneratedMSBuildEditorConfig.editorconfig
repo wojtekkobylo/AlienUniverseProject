@@ -26,3 +26,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/maks/RiderProjects/AlienUniverseMaks/AlienUniverseMaks/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/maks/RiderProjects/AlienUniverseMaks/AlienUniverseMaks/Views/SummaryWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
