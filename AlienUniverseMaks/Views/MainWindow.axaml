@@ -33,8 +33,28 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            <Button Content="Chce dodac film" Command="{Binding StartAddFilmCommand}"  Grid.Row="4"/>
+
+            <Button Content="Usuń film"
+                    Command="{Binding RemoveFilmCommand}"
+                    IsEnabled="{Binding SelectedFilm, Converter={x:Static ObjectConverters.IsNotNull}}"
+                    Grid.Column="1" Grid.Row="4" />
+        </Grid>
+            <StackPanel IsVisible="{Binding IsAddingFilm}" Spacing="5">
+                <TextBox Watermark="Tytuł" Text="{Binding NewFilmTitle}"/>
+                <TextBox Watermark="Polska nazwa" Text="{Binding NewFilmPlTitle}"/>
+                <TextBox Watermark="Rok premiery" Text="{Binding NewFilmReleaseYear}"/>
+                <TextBox Watermark="Reżyser" Text="{Binding NewFilmDirector}"/>
+                <TextBox Watermark="Scenariusz" Text="{Binding NewFilmScenario}"/>
+                <TextBox Watermark="Gatunek" Text="{Binding NewFilmGenre}"/>
+                <TextBox Watermark="Czas trwania" Text="{Binding NewFilmMovieTime}"/>
+                <TextBox Watermark="Ocena IMDb" Text="{Binding NewFilmRating}"/>
+                <TextBox Watermark="Statek" Text="{Binding NewFilmShip}"/>
+                <TextBox Watermark="Opis" Text="{Binding NewFilmDescription}" AcceptsReturn="True" Height="60"/>
+                <Button Content="Dodaj film" Command="{Binding ConfirmAddFilmCommand}"/>
+            </StackPanel>
             
-            </Grid>
+            
     </StackPanel>
 
 </Window>

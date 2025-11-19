@@ -29,6 +29,9 @@ public class MainWindowViewModel : ViewModelBase
     [Reactive] public string Ship { get; set; } = "";
     [Reactive] public string Description { get; set; } = "";
     [Reactive] public string FunFact { get; set; } = "";
+    
+    public ReactiveCommand<Unit, Unit> AddFilmCommand { get; }
+    public ReactiveCommand<Unit, Unit> RemoveFilmCommand { get; }
     public ObservableCollection<Film> Films { get; } = new()
     {
         new Film
@@ -143,8 +146,72 @@ public class MainWindowViewModel : ViewModelBase
     }
     public ReactiveCommand<Unit, Unit> ShowDetailsButton { get; }
 
+    public ReactiveCommand<Unit, Unit> StartAddFilmCommand { get; }
+    public ReactiveCommand<Unit, Unit> ConfirmAddFilmCommand { get; }
+    [Reactive] public bool IsAddingFilm { get; set; } = false;
+
+    [Reactive] public string NewFilmTitle { get; set; } = "";
+    [Reactive] public string NewFilmPlTitle { get; set; } = "";
+    [Reactive] public int NewFilmReleaseYear { get; set; }
+    [Reactive] public string NewFilmDirector { get; set; } = "";
+    [Reactive] public string NewFilmScenario { get; set; } = "";
+    [Reactive] public string NewFilmGenre { get; set; } = "";
+    [Reactive] public string NewFilmMovieTime { get; set; } = "";
+    [Reactive] public double NewFilmRating { get; set; } = 0;
+    [Reactive] public string NewFilmShip { get; set; } = "";
+    [Reactive] public string NewFilmDescription { get; set; } = "";
+    
     public MainWindowViewModel()
     {
+        StartAddFilmCommand = ReactiveCommand.Create(() =>
+        {
+            IsAddingFilm = true;
+
+            
+            NewFilmTitle = "";
+            NewFilmPlTitle = "";
+            NewFilmReleaseYear = 0;
+            NewFilmDirector = "";
+            NewFilmScenario = "";
+            NewFilmGenre = "";
+            NewFilmMovieTime = "";
+            NewFilmRating = 0;
+            NewFilmShip = "";
+            NewFilmDescription = "";
+        });
+
+        
+        ConfirmAddFilmCommand = ReactiveCommand.Create(() =>
+        {
+            var film = new Film
+            {
+                title = NewFilmTitle,
+                pltitle = NewFilmPlTitle,
+                releaseYear = NewFilmReleaseYear,
+                director = NewFilmDirector,
+                scenario = NewFilmScenario,
+                genre = NewFilmGenre,
+                movieTime = NewFilmMovieTime,
+                rating = NewFilmRating,
+                mainCharacters = new List<string>(), 
+                ship = NewFilmShip,
+                description = NewFilmDescription,
+                funFact = ""
+            };
+
+            Films.Add(film);
+            SelectedFilm = film; 
+            IsAddingFilm = false; 
+        });
+        
+        RemoveFilmCommand = ReactiveCommand.Create(() =>
+        {
+            if (SelectedFilm != null)
+            {
+                Films.Remove(SelectedFilm);
+            }
+    });
+        
         ShowSummaryWindow = new Interaction<Film, Unit>();
 
         ShowDetailsButton = ReactiveCommand.CreateFromTask(async () =>
