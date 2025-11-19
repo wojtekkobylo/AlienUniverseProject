@@ -218,10 +218,10 @@ public class MainWindowViewModel : ViewModelBase
         
         ShowSummaryWindow = new Interaction<Film, Unit>();
 
-        ShowDetailsButton = ReactiveCommand.CreateFromTask(async () =>
-        {
-            await ShowSummaryWindow.Handle(SelectedFilm);
-        });
+        // ShowDetailsButton = ReactiveCommand.CreateFromTask(async () =>
+        // {
+        //     await ShowSummaryWindow.Handle(SelectedFilm);
+        // });
         
         this.WhenAnyValue(x => x.SelectedFilm)
             .Where(film => film != null)

@@ -24,6 +24,9 @@ build_property.EnableCodeStyleSeverity =
 [C:/Users/maksy/RiderProjects/AlienUniverseProject/AlienUniverseMaks/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/maksy/RiderProjects/AlienUniverseProject/AlienUniverseMaks/Views/CharactersWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/maksy/RiderProjects/AlienUniverseProject/AlienUniverseMaks/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

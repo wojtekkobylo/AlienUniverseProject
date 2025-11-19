@@ -47,6 +47,7 @@
         <TextBlock TextWrapping="Wrap"><Run Text="Ciekawostka: "/><Run Text="{Binding funFact}"/></TextBlock>
         <TextBlock Text=""/>
 
+        <Button Content="Pokaż szczegóły bohaterów" Command="{Binding ShowCharactersWindow}"/>
     </StackPanel>
 </Window>
 

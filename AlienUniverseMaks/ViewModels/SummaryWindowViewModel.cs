@@ -1,5 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Reactive;
+using System.Reactive.Linq;
 using AlienUniverseMaks.Models;
+using AlienUniverseMaks.Views;
+using ReactiveUI;
 
 namespace AlienUniverseMaks.ViewModels;
 
@@ -19,6 +23,11 @@ public class SummaryWindowViewModel
     public string funFact { get; set; } = "";
     
     
+     public ReactiveCommand<Unit, Unit> ShowCharactersWindow { get; }
+    
+    public Interaction<List<string>, Unit> NewCharactersWindow { get; }
+    
+    
     public SummaryWindowViewModel(Film data)
     {
         title = data.title;
@@ -33,6 +42,21 @@ public class SummaryWindowViewModel
         ship = data.ship;
         description = data.description;
         funFact = data.funFact;
+        
+        
+
+        NewCharactersWindow = new Interaction<List<string>, Unit>();
+        ShowCharactersWindow = ReactiveCommand.CreateFromTask(async () =>
+        {
+            if (mainCharacters != null)
+            {
+                await NewCharactersWindow.Handle(mainCharacters);
+            }
+        });
+        
+
+        
     }
+    
     
 }

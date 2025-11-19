@@ -4,6 +4,8 @@
     <option name="projectPerEditor">
       <map>
         <entry key="AlienUniverseMaks/App.axaml" value="AlienUniverseMaks/AlienUniverseMaks.csproj" />
+        <entry key="AlienUniverseMaks/Views/CharactersWindow.axaml" value="AlienUniverseMaks/AlienUniverseMaks.csproj" />
+        <entry key="AlienUniverseMaks/Views/CharactersWinwo.axaml" value="AlienUniverseMaks/AlienUniverseMaks.csproj" />
         <entry key="AlienUniverseMaks/Views/MainWindow.axaml" value="AlienUniverseMaks/AlienUniverseMaks.csproj" />
         <entry key="AlienUniverseMaks/Views/SummaryWindow.axaml" value="AlienUniverseMaks/AlienUniverseMaks.csproj" />
       </map>

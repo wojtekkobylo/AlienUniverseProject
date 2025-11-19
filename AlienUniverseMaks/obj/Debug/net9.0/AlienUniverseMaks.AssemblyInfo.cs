@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlienUniverseMaks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2341076a23f034645f66b932088bcd9db9e1a362")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecea7ed6457689efbc6608f2462eb990877836bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlienUniverseMaks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlienUniverseMaks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
