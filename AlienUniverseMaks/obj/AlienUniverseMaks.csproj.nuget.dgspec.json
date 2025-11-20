@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maksy\\RiderProjects\\AlienUniverseProject\\AlienUniverseMaks\\AlienUniverseMaks.csproj": {}
+    "/home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/AlienUniverseMaks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maksy\\RiderProjects\\AlienUniverseProject\\AlienUniverseMaks\\AlienUniverseMaks.csproj": {
+    "/home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/AlienUniverseMaks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maksy\\RiderProjects\\AlienUniverseProject\\AlienUniverseMaks\\AlienUniverseMaks.csproj",
+        "projectUniqueName": "/home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/AlienUniverseMaks.csproj",
         "projectName": "AlienUniverseMaks",
-        "projectPath": "C:\\Users\\maksy\\RiderProjects\\AlienUniverseProject\\AlienUniverseMaks\\AlienUniverseMaks.csproj",
-        "packagesPath": "C:\\Users\\maksy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maksy\\RiderProjects\\AlienUniverseProject\\AlienUniverseMaks\\obj\\",
+        "projectPath": "/home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/AlienUniverseMaks.csproj",
+        "packagesPath": "/home/maks/.nuget/packages/",
+        "outputPath": "/home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maksy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/maks/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -36,7 +37,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -89,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\maksy\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

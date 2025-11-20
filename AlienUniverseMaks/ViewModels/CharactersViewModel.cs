@@ -60,7 +60,7 @@ public class CharactersViewModel : ReactiveObject
     }
 
     List<Character> AllCharacters() => new List<Character>
-    {
+    { 
         new Character{ Name="Ellen Louise Ripley", Role="Oficer bezpieczeństwa", Actor="Sigourney Weaver", Race="Człowiek", YearOfBirth="2092", Description="Zdeterminowana, inteligentna." },
         new Character{ Name="Arthur Koblenz Dallas", Role="Kapitan", Actor="Tom Skerritt", Race="Człowiek", YearOfBirth="2071", Description="Opanowany, odpowiedzialny." },
         new Character{ Name="Ash", Role="Oficer naukowy", Actor="Ian Holm", Race="Android", YearOfBirth="Brak danych", Description="Kierowany tajnymi rozkazami." },

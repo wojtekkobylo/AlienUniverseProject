@@ -14,23 +14,23 @@ namespace AlienUniverseMaks.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
-    public ReactiveCommand<Unit, Unit> ShowSummaryCommand { get; }
+ //   public ReactiveCommand<Unit, Unit> ShowSummaryCommand { get; }
     public Interaction<Film, Unit> ShowSummaryWindow { get; }
     
-    [Reactive] public string Title { get; set; } = "";
-    [Reactive] public string PlTitle { get; set; } = "";
-    [Reactive] public int ReleaseYear { get; set; } = 0;
-    [Reactive] public string Director { get; set; } = "";
-    [Reactive] public string Scenario { get; set; } = "";
-    [Reactive] public string Genre { get; set; } = "";
-    [Reactive] public string MovieTime { get; set; } = "";
-    [Reactive] public double Rating { get; set; } = 0;
-    [Reactive] public List<string> MainCharacters { get; set; }
-    [Reactive] public string Ship { get; set; } = "";
-    [Reactive] public string Description { get; set; } = "";
-    [Reactive] public string FunFact { get; set; } = "";
+  //  [Reactive] public string Title { get; set; } = "";
+  //  [Reactive] public string PlTitle { get; set; } = "";
+   // [Reactive] public int ReleaseYear { get; set; } = 0;
+ //   [Reactive] public string Director { get; set; } = "";
+  //  [Reactive] public string Scenario { get; set; } = "";
+   // [Reactive] public string Genre { get; set; } = "";
+   // [Reactive] public string MovieTime { get; set; } = "";
+    //[Reactive] public double Rating { get; set; } = 0;
+   // [Reactive] public List<string> MainCharacters { get; set; }
+   // [Reactive] public string Ship { get; set; } = "";
+  //  [Reactive] public string Description { get; set; } = "";
+    //[Reactive] public string FunFact { get; set; } = "";
     
-    public ReactiveCommand<Unit, Unit> AddFilmCommand { get; }
+   // public ReactiveCommand<Unit, Unit> AddFilmCommand { get; }
     public ReactiveCommand<Unit, Unit> RemoveFilmCommand { get; }
     public ObservableCollection<Film> Films { get; } = new()
     {
@@ -159,6 +159,9 @@ public class MainWindowViewModel : ViewModelBase
     [Reactive] public string NewFilmGenre { get; set; } = "";
     [Reactive] public string NewFilmMovieTime { get; set; } = "";
     [Reactive] public double NewFilmRating { get; set; } = 0;
+
+    [Reactive] public string NewMainCharacter { get; set; } = "";
+    
     [Reactive] public string NewFilmShip { get; set; } = "";
     [Reactive] public string NewFilmDescription { get; set; } = "";
     
@@ -179,6 +182,7 @@ public class MainWindowViewModel : ViewModelBase
             NewFilmGenre = "";
             NewFilmMovieTime = "";
             NewFilmRating = 0;
+            NewMainCharacter = "";
             NewFilmShip = "";
             NewFilmDescription = "";
             NewFilmFunFact = "";
@@ -197,12 +201,12 @@ public class MainWindowViewModel : ViewModelBase
                 genre = NewFilmGenre,
                 movieTime = NewFilmMovieTime,
                 rating = NewFilmRating,
-                mainCharacters = new List<string>(), 
+                mainCharacters = new List<string> { NewMainCharacter },
                 ship = NewFilmShip,
                 description = NewFilmDescription,
                 funFact = NewFilmFunFact,
             };
-
+            
             Films.Add(film);
             SelectedFilm = film; 
             IsAddingFilm = false; 

@@ -52,6 +52,7 @@
                 <TextBox Watermark="Czas trwania" Text="{Binding NewFilmMovieTime}"/>
                 <TextBlock Text="Ocena IMDb:"/>
                 <TextBox Watermark="Ocena IMDb" Text="{Binding NewFilmRating}" />
+                <TextBox Watermark="Główni bohaterowie" Text="{Binding NewMainCharacter}"/>
                 <TextBox Watermark="Statek" Text="{Binding NewFilmShip}"/>
                 <TextBox Watermark="Opis" Text="{Binding NewFilmDescription}" AcceptsReturn="True" Height="60"/>
                 <TextBox Watermark="Ciekawostka" Text="{Binding NewFilmFunFact}"/>

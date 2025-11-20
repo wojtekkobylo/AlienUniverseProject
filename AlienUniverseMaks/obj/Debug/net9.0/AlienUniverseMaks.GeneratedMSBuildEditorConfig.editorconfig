@@ -15,20 +15,20 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AlienUniverseMaks
-build_property.ProjectDir = C:\Users\maksy\RiderProjects\AlienUniverseProject\AlienUniverseMaks\
+build_property.ProjectDir = /home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/maksy/RiderProjects/AlienUniverseProject/AlienUniverseMaks/App.axaml]
+[/home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/maksy/RiderProjects/AlienUniverseProject/AlienUniverseMaks/Views/CharactersWindow.axaml]
+[/home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/Views/CharactersWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/maksy/RiderProjects/AlienUniverseProject/AlienUniverseMaks/Views/MainWindow.axaml]
+[/home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/maksy/RiderProjects/AlienUniverseProject/AlienUniverseMaks/Views/SummaryWindow.axaml]
+[/home/maks/RiderProjects/AlienUniverseProject/AlienUniverseMaks/Views/SummaryWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
